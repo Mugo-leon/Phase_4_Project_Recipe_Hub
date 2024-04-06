@@ -35,6 +35,25 @@ def create_user():
 
     return jsonify({'message': 'User created successfully'}), 201
 
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    if not data:
+        return jsonify({'message': 'Invalid request'}), 400
+
+    username = data.get('username')
+    password = data.get('password')
+
+    user = User.query.filter_by(username=username).first()
+
+    if user and user.password == password:
+        # Set user_id in session
+        session['user_id'] = user.id
+        return jsonify({'message': 'Login successful'}), 200
+    else:
+        return jsonify({'message': 'Invalid username or password'}), 401
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5555)
