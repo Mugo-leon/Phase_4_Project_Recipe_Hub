@@ -7,7 +7,7 @@ import CreateUser from './CreateUser';
 import Login from './Login';
 import Dashboard from './Dashboard';
 import Home from './Home';
-import CreateRecipe from './CreateRecipe';
+
  
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
                     <Route path="/create-user" element={<CreateUser />} />
                     <Route path="/login" element={<Login onLogin={handleLogin} />} />
                     <Route path="/dashboard" element={<Dashboard username={username} onLogout={handleLogout} />} />
-                    <Route path="/create-recipe" element={<CreateRecipe username={username} />} />
+                    
                     
                 </Routes>
             </div>
