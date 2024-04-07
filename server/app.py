@@ -173,6 +173,38 @@ def favorite_recipe(recipe_id):
 
     return jsonify({'message': 'Recipe favorited successfully'}), 201
 
+@app.route('/favorite_recipes', methods=['GET'])
+def get_favorite_recipes():
+    try:
+        # Get the user ID from the session
+        user_id = session.get('user_id')
+
+        # Query the database for the favorite recipes associated with the user_id
+        user = User.query.get(user_id)
+        if not user:
+            return jsonify({'message': 'User not found'}), 404
+
+        favorite_recipes = user.favorite_recipes
+        if not favorite_recipes:
+            return jsonify({'message': 'No favorite recipes found for this user'}), 404
+
+        # Retrieve the recipe details for each favorite recipe
+        favorite_recipe_details = []
+        for fav_recipe in favorite_recipes:
+            recipe = Recipe.query.get(fav_recipe.recipe_id)
+            if recipe:
+                recipe_data = {
+                    'id': recipe.id,
+                    'name': recipe.name,
+                    'description': recipe.description,
+                    'user_id': recipe.user_id
+                }
+                favorite_recipe_details.append(recipe_data)
+
+        return jsonify({'favorite_recipes': favorite_recipe_details}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({'message': 'Error fetching favorite recipes'}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, port=5555)
