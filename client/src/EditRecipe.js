@@ -11,15 +11,14 @@ function EditRecipe({ username }) {
     });
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
-    const token = "YOUR_BEARER_TOKEN";  // Replace with your actual token
-
+    const token = "YOUR_BEARER_TOKEN";  
     useEffect(() => {
         const fetchUserRecipes = async () => {
             try {
                 setIsLoading(true);
                 const response = await fetch(`/get_user_recipes/${username}`, {
                     headers: {
-                        'Authorization': `Bearer ${token}`  // Use the token for authorization
+                        'Authorization': `Bearer ${token}`  
                     }
                 });
                 const data = await response.json();
@@ -45,7 +44,7 @@ function EditRecipe({ username }) {
                     setIsLoading(true);
                     const response = await fetch(`/get_recipe/${username}/${selectedRecipeId}`, {
                         headers: {
-                            'Authorization': `Bearer ${token}`  // Use the token for authorization
+                            'Authorization': `Bearer ${token}`  
                         }
                     });
                     const data = await response.json();
@@ -71,7 +70,7 @@ function EditRecipe({ username }) {
     const handleSelectRecipe = (e) => {
         setSelectedRecipeId(e.target.value);
         
-        // Find the selected recipe from the recipes state
+        
         const selectedRecipe = recipes.find(recipe => recipe.id === parseInt(e.target.value));
         
         // Update the recipe state with the selected recipe details
@@ -102,15 +101,15 @@ function EditRecipe({ username }) {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
-                    'UserId': username  // Pass the logged-in username in the headers
+                    'UserId': username  
                 },
                 body: JSON.stringify(recipeData)
             });
             const data = await response.json();
             if (response.ok) {
-                setMessage('Recipe updated successfully'); // Set success message
+                setMessage('Recipe updated successfully'); 
                 setTimeout(() => {
-                    setMessage(''); // Clear the success message after a certain time
+                    setMessage(''); 
                     navigate('/my-recipes');
                 }, 3000);}
                  else {

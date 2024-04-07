@@ -205,6 +205,30 @@ def get_favorite_recipes():
     except Exception as e:
         print(e)
         return jsonify({'message': 'Error fetching favorite recipes'}), 500
+        
+@app.route('/edit_recipe/<int:recipe_id>', methods=['PUT'])
+def edit_recipe(recipe_id):
+    data = request.json
+    name = data.get('name')
+    description = data.get('description')
+    
+    user_id = session.get('user_id')  
+
+    if not user_id:
+        return jsonify({'error': 'User ID not provided in session'}), 400
+
+    # Fetch the recipe to update
+    recipe = Recipe.query.filter_by(id=recipe_id, user_id=user_id).first()
+
+    if not recipe:
+        return jsonify({'message': 'Recipe not found'}), 404
+
+    recipe.name = name
+    recipe.description = description
+    db.session.commit()
+
+    return jsonify({'message': 'Recipe updated successfully'}), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5555)
