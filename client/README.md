@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Recipe Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction:
+Recipe Hub is an online platform dedicated to discovering, sharing, and organizing recipes. It provides a centralized hub for users to showcase their culinary creations, learn from others, and save their favorite recipes for future use.
 
-## Available Scripts
+## Features:
+### 1. User Account Management:
+   - Users can create accounts to access the platform.
+   - Account creation requires basic user information.
+   - Users can log in using session management.
 
-In the project directory, you can run:
+### 2. Recipe Creation and Management:
+   - Users can create and save recipes to their accounts.
+   - Recipes include details such as ingredients, instructions, and images.
+   - Users can view all the recipes they have created.
 
-### `npm start`
+### 3. Recipe Discovery and Interaction:
+   - Users can explore all recipes shared by other users.
+   - Users can add recipes from other users to their favorite recipes list.
+   - Users can easily access their favorite recipes for cooking inspiration.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 4. Recipe Editing and Deletion:
+   - Users can edit the recipes they have created to make updates or improvements.
+   - Users can delete recipes they have created if they are no longer needed.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## MVP Contributors:
+- **Denis Kimani:** Account management and session handling.
+- **Edgar Otieno:** Recipe creation, management, and viewing.
+- **Leon Muriuki:** Recipe discovery, interaction, and favoriting.
+- **Jane Mwaura:** Recipe editing and deletion functionality.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
