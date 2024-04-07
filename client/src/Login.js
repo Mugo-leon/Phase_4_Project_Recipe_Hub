@@ -6,7 +6,7 @@ function Login({ onLogin }) {
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
     const [loginMessage, setLoginMessage] = useState('');
-    const navigate = useNavigate(); // Initialize the useNavigate hook
+    const navigate = useNavigate(); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();

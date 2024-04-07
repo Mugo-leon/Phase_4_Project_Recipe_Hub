@@ -8,7 +8,6 @@ function Dashboard({ username }) {
     
 
     useEffect(() => {
-        // Set isVisible to true after component mounts to trigger the animation
         setIsVisible(true);
     }, []);
 

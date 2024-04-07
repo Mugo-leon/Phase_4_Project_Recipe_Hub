@@ -18,7 +18,6 @@ const Home = () => {
          
         </div>
         <div className="hero-image">
-          {/* Insert a relevant image related to cooking or food */}
           <img src="https://www.frontiersin.org/files/special%20topics/62214/thumb_400.jpg" alt="Cooking" />
         </div>
       </section>
@@ -27,14 +26,12 @@ const Home = () => {
       <section className="popular-recipes-section">
         <h2>Popular Recipes</h2>
         <div className="recipee-cards">
-          {/* Recipe cards can be dynamically generated based on popular recipes */}
           <div className="recipe-cards">
             <img src="https://weeatatlast.com/wp-content/uploads/2022/03/mishkaki-recipe.jpg" alt="Recipe" />
             <h3>Mishkaki</h3>
             <p>Mishkaki, also known as mshakiki, refers to kabobs (cubed pieces of meat such as chicken, beef, or mutton that are marinated, skewered, and then roasted in a grill). 
               It is a popular dish in East African countries, especially in Kenya and Tanzania, as well as in Middle Eastern countries such as Yemen. </p>
           </div>
-          {/* Add more recipe cards as needed */}
           <div className="recipe-cards">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW_Ia_NV_DwCkT7E1O_QaRXrAcHPsbdYkZdyK9Ro4yEA&s" alt="Recipe" />
             <h3>Kenyan Style Stew</h3>
