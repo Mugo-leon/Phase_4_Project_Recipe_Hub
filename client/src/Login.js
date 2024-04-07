@@ -1,6 +1,5 @@
-// Login.js
 import React, { useState } from 'react';
-import {Link, useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
+import {Link, useNavigate } from 'react-router-dom'; 
 
 function Login({ onLogin }) {
     const [username, setUsername] = useState('');
