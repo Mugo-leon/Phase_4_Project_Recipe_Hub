@@ -8,6 +8,7 @@ import Login from './Login';
 import Dashboard from './Dashboard';
 import Home from './Home';
 import CreateRecipe from './CreateRecipe';
+import MyRecipes from './MyRecipes';
  
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
                     <Route path="/login" element={<Login onLogin={handleLogin} />} />
                     <Route path="/dashboard" element={<Dashboard username={username} onLogout={handleLogout} />} />
                     <Route path="/create-recipe" element={<CreateRecipe username={username} />} />
+                    <Route path="/my-recipes" element={<MyRecipes username={username} />} />
                     
                 </Routes>
             </div>
