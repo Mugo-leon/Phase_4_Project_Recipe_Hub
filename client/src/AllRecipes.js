@@ -51,7 +51,6 @@ const AllRecipes = () => {
       <div className="recipe-card" key={recipe.id}>
         <h3>{recipe.name}</h3>
         <p>{recipe.description}</p>
-        <p>Chef: {recipe.user_id}</p>
         <button onClick={() => handleFavorite(recipe.id)}>Favorite</button>
       </div>
     ))}
