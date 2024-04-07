@@ -35,6 +35,15 @@ def create_user():
 
     return jsonify({'message': 'User created successfully'}), 201
 
+@app.route('/users', methods=['GET'])
+def get_users():
+    users = User.query.all()
+    output = []
+    for user in users:
+        user_data = {'id': user.id, 'username': user.username}
+        output.append(user_data)
+    return jsonify({'users': output}), 200
+
 @app.route('/login', methods=['POST'])
 def login():
     data = request.json
