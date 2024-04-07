@@ -131,6 +131,15 @@ def get_user_recipes(username):
 def index():
     return 'WELCOME TO MY TASTY WORLD'
 
+@app.route('/recipes', methods=['GET'])
+def get_recipes():
+    recipes = Recipe.query.all()
+    output = []
+    for recipe in recipes:
+        recipe_data = {'id': recipe.id, 'name': recipe.name, 'description': recipe.description, 'user_id': recipe.user_id}
+        output.append(recipe_data)
+    return jsonify({'recipes': output}), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5555)
