@@ -31,8 +31,6 @@ function Dashboard({ username }) {
                 opacity: isVisible ? 1 : 0, // Initially set opacity to 0
                 transition: 'opacity 1s ease-in-out' // Add transition for smooth animation
             }}>Start exploring delicious recipes from around the world and unleash your inner chef!</p>
-
-            {/* Child routes will be rendered here */}
             <Outlet />
         </div>
     );
