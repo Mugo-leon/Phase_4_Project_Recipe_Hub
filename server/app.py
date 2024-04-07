@@ -229,6 +229,17 @@ def edit_recipe(recipe_id):
 
     return jsonify({'message': 'Recipe updated successfully'}), 200
 
+@app.route('/delete_recipe/<int:recipe_id>', methods=['DELETE'])
+def delete_recipe(recipe_id):
+    recipe = Recipe.query.get(recipe_id)
+    if not recipe:
+        return jsonify({'message': 'Recipe not found'}), 404
+
+    db.session.delete(recipe)
+    db.session.commit()
+
+    return jsonify({'message': 'Recipe deleted successfully'}), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5555)
