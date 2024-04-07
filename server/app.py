@@ -52,6 +52,26 @@ def login():
         return jsonify({'message': 'Login successful'}), 200
     else:
         return jsonify({'message': 'Invalid username or password'}), 401
+    
+@app.route('/create_recipe', methods=['POST'])
+def create_recipe():
+    data = request.json
+    user_id = session.get('user_id')  # Correctly fetch user_id from session
+    
+    if not user_id:
+        return jsonify({'error': 'User ID not provided in session'}), 400
+
+    name = data.get('name')
+    description = data.get('description')
+
+    if not name or not description:
+        return jsonify({'error': 'Name or description missing in request'}), 400
+
+    new_recipe = Recipe(name=name, description=description, user_id=user_id)  # Associate the user_id with the new recipe
+    db.session.add(new_recipe)
+    db.session.commit()
+
+    return jsonify({'message': 'Recipe created successfully'}), 201
 
 
 
