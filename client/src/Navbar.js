@@ -64,7 +64,7 @@ function Navbar({ isLoggedIn, onLogout, username }) {
                         <li><Link to="/all-recipes">All Recipes</Link></li>
                         <li><Link to="/create-recipe">Create Recipe</Link></li>
                         <li><Link to="/my-recipes">My Recipes</Link></li>
-                        <li><Link to="/favorite-recipes">Favorite Recipes</Link></li> {/* New link for Favorite Recipes */}
+                        <li><Link to="/favorite-recipes">Favorite Recipes</Link></li>
         
                         <li><Link to="/" onClick={handleLogoutClick}
                         style={{
