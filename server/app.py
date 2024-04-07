@@ -149,6 +149,30 @@ def get_recipes():
         output.append(recipe_data)
     return jsonify({'recipes': output}), 200
 
+@app.route('/favorite_recipe/<int:recipe_id>', methods=['POST'])
+def favorite_recipe(recipe_id):
+    user_id = session.get('user_id')  # Fetch user_id from session
+
+    if not user_id:
+        return jsonify({'error': 'User ID not provided in session'}), 400
+
+    # Check if the recipe exists
+    recipe = Recipe.query.get(recipe_id)
+    if not recipe:
+        return jsonify({'error': 'Recipe not found'}), 404
+
+    # Check if the recipe is already favorited by the user
+    existing_favorite = FavoriteRecipe.query.filter_by(user_id=user_id, recipe_id=recipe_id).first()
+    if existing_favorite:
+        return jsonify({'message': 'Recipe already favorited'}), 200
+
+    # Add the recipe to the user's favorites
+    new_favorite = FavoriteRecipe(user_id=user_id, recipe_id=recipe_id)
+    db.session.add(new_favorite)
+    db.session.commit()
+
+    return jsonify({'message': 'Recipe favorited successfully'}), 201
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5555)
