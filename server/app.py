@@ -74,6 +74,63 @@ def create_recipe():
     return jsonify({'message': 'Recipe created successfully'}), 201
 
 
+@app.route('/get_recipe/<int:user_id>/<int:recipe_id>', methods=['GET'])
+def get_recipe(user_id, recipe_id):
+    try:
+        # Fetch the recipe from the database based on user_id and recipe_id
+        recipe = Recipe.query.filter_by(id=recipe_id, user_id=user_id).first()
+
+        # Check if the recipe exists
+        if not recipe:
+            return jsonify({'message': 'Recipe not found'}), 404
+
+        recipe_data = {
+            'id': recipe.id,
+            'name': recipe.name,
+            'description': recipe.description,
+            'user_id': recipe.user_id
+        }
+
+        return jsonify(recipe_data), 200
+    except Exception as e:
+        print(e)
+        return jsonify({'message': 'Error fetching recipe details'}), 500
+    
+@app.route('/get_user_recipes/<username>', methods=['GET'])
+def get_user_recipes(username):
+    try:
+        # Fetch the user based on the username
+        user = User.query.filter_by(username=username).first()
+        
+        # Check if user exists
+        if not user:
+            return jsonify({'message': 'User not found'}), 404
+        
+        # Fetch the recipes based on the user_id
+        recipes = Recipe.query.filter_by(user_id=user.id).all()
+
+        # Check if any recipes exist
+        if not recipes:
+            return jsonify({'message': 'No recipes found for this user'}), 404
+
+        output = []
+        for recipe in recipes:
+            recipe_data = {
+                'id': recipe.id,
+                'name': recipe.name,
+                'description': recipe.description,
+                'user_id': recipe.user_id
+            }
+            output.append(recipe_data)
+
+        return jsonify({'recipes': output}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({'message': 'Error fetching user recipes'}), 500
+@app.route('/')
+def index():
+    return 'WELCOME TO MY TASTY WORLD'
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5555)
