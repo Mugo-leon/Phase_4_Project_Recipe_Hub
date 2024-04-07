@@ -9,6 +9,8 @@ import CreateRecipe from './CreateRecipe';
 import MyRecipes from './MyRecipes';
 import FavoriteRecipes from './FavoriteRecipes';
 import AllRecipes from './AllRecipes';
+import EditRecipe from './EditRecipe';
+
  
 
 function App() {
@@ -39,6 +41,7 @@ function App() {
                     <Route path="/login" element={<Login onLogin={handleLogin} />} />
                     <Route path="/dashboard" element={<Dashboard username={username} onLogout={handleLogout} />} />
                     <Route path="/create-recipe" element={<CreateRecipe username={username} />} />
+                    <Route path="/edit_recipe/:username/:recipe_id" element={<EditRecipe username={username} />} />
                     <Route path="/my-recipes" element={<MyRecipes username={username} />} />
                     <Route path="/favorite-recipes" element={<FavoriteRecipes username={username} />} />
                     <Route path="/all-recipes" element={<AllRecipes />} />
