@@ -7,6 +7,8 @@ import Dashboard from './Dashboard';
 import Home from './Home';
 import CreateRecipe from './CreateRecipe';
 import MyRecipes from './MyRecipes';
+import FavoriteRecipes from './FavoriteRecipes';
+import AllRecipes from './AllRecipes';
  
 
 function App() {
@@ -38,7 +40,8 @@ function App() {
                     <Route path="/dashboard" element={<Dashboard username={username} onLogout={handleLogout} />} />
                     <Route path="/create-recipe" element={<CreateRecipe username={username} />} />
                     <Route path="/my-recipes" element={<MyRecipes username={username} />} />
-                    
+                    <Route path="/favorite-recipes" element={<FavoriteRecipes username={username} />} />
+                    <Route path="/all-recipes" element={<AllRecipes />} />
                 </Routes>
             </div>
         </Router>
