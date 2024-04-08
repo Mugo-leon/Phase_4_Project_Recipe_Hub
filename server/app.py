@@ -249,5 +249,3 @@ def get_favorite_recipes():
         return jsonify({'message': 'Error fetching favorite recipes'}), 500
 
 
-if __name__ == '__main__':
-    app.run(debug=True, )
