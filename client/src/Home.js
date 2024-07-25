@@ -1,26 +1,38 @@
 import React from 'react';
+import pancakeImage from './pancake.jpg';
+import background from './background.jpg';
 
 
 const Home = () => {
   return (
-    <div className="landing-page">
-      <header>
-        <h1>Welcome to The Recipe Hub</h1>
-        <p><marquee>Kindly login or sign up to access the application. </marquee></p> 
+    
+    <div data-aos='fade-down' className="flex flex-col-reverse lg:flex-row justify-between items-center gap-5 lg:gap-28 w-full px-0 py-0">
       
-      <section className="hero-section">
-        <div className="hero-content">
-          <h2>Discover Delicious Recipes</h2>
-        <p>From savory main courses to delectable desserts, 
-          our recipe collection has something for everyone. 
-          Whether you're planning a cozy family dinner, a romantic date night, or a festive gathering with friends, we've got you covered. 
-          Get ready to unleash your culinary creativity and delight your taste buds with our irresistible dishes!</p>
-         
-        </div>
-        <div className="hero-image">
-          <img src="https://www.frontiersin.org/files/special%20topics/62214/thumb_400.jpg" alt="Cooking" />
-        </div>
-      </section>
+    <div style={{ backgroundColor: '#4c0519' }} className="h-full lg:py-40 flex flex-col justify-center lg:items-start items-center text-white text-left">
+      <header>
+        <section
+  className="hero-section flex flex-col lg:flex-row items-center justify-between lg:space-x-8 px-6 lg:px-16 py-12 bg-rose-950"
+  style={{
+    backgroundImage: `url(${background})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+>
+  <div className="hero-content w-full lg:w-1/2 text-left">
+    <h1 className="text-[52px] font-semibold mb-8 leading-normal italic">
+      Cooking Made Easy  <span className="text-[52px] font-semibold mb-8 leading-normal text-slate-950">
+        One Recipe at a Time
+      </span>
+    </h1>
+    <p className="text-lg lg:text-xl leading-relaxed">
+      From savory main courses to delectable desserts, 
+      our recipe collection has something for everyone. 
+      Whether you're planning a cozy family dinner, a romantic date night, or a festive gathering with friends, we've got you covered. 
+      Get ready to unleash your culinary creativity and delight your taste buds with our irresistible dishes!
+    </p>
+  </div>
+</section>
+
       </header>
 
       <section className="popular-recipes-section">
@@ -78,11 +90,13 @@ const Home = () => {
         <li>Address: 123 Nairobi Street, Nairobi, KENYA</li>
       </ul>
     </div>
+    
   </div>
   <div class="footer-bottom">
     <p>&copy; 2024 The Recipe Corner. All rights reserved.</p>
   </div>
 </footer>
+    </div>
     </div>
   );
 };

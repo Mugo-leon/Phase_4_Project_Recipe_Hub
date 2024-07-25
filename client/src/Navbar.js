@@ -53,23 +53,23 @@ function Navbar({ isLoggedIn, onLogout, username }) {
                 <ul className="flex justify-end space-x-4">
                     {!isLoggedIn ? (
                         <>
-                            <li><Link to="/create-user" className="text-white hover:bg-slate-950 px-3 py-2 rounded-md">Create User</Link></li>
-                            <li><Link to="/login" className="text-white hover:bg-slate-950 px-3 py-2 rounded-md">Login</Link></li>
-                            <li><Link to="/" className="text-white hover:bg-slate-950 px-3 py-2 rounded-md">Home</Link></li>
+                            <li><Link to="/create-user" className="text-white hover:bg-rose-950 px-3 py-2 rounded-md">Create User</Link></li>
+                            <li><Link to="/login" className="text-white hover:bg-rose-950 px-3 py-2 rounded-md">Login</Link></li>
+                            <li><Link to="/" className="text-white hover:bg-rose-950 px-3 py-2 rounded-md">Home</Link></li>
                         </>
                     ) : (
                         <>
-                            <li><Link to="/dashboard" className="text-white hover:bg-slate-950 px-3 py-2 rounded-md">Dashboard</Link></li>
-                            <li><Link to="/all-recipes" className="text-white hover:bg-slate-950 px-3 py-2 rounded-md">All Recipes</Link></li>
-                            <li><Link to="/create-recipe" className="text-white hover:bg-slate-950 px-3 py-2 rounded-md">Create Recipe</Link></li>
-                            <li><Link to="/my-recipes" className="text-white hover:bg-slate-950 px-3 py-2 rounded-md">My Recipes</Link></li>
-                            <li><Link to="/favorite-recipes" className="text-white hover:bg-slate-950 px-3 py-2 rounded-md">Favorite Recipes</Link></li>
+                            <li><Link to="/dashboard" className="text-white hover:bg-rose-950 px-3 py-2 rounded-md">Dashboard</Link></li>
+                            <li><Link to="/all-recipes" className="text-white hover:bg-rose-950 px-3 py-2 rounded-md">All Recipes</Link></li>
+                            <li><Link to="/create-recipe" className="text-white hover:bg-rose-950 px-3 py-2 rounded-md">Create Recipe</Link></li>
+                            <li><Link to="/my-recipes" className="text-white hover:bg-rose-950 px-3 py-2 rounded-md">My Recipes</Link></li>
+                            <li><Link to="/favorite-recipes" className="text-white hover:bg-rose-950 px-3 py-2 rounded-md">Favorite Recipes</Link></li>
                             <li><Link to="/" onClick={handleLogoutClick} className="text-red-600 hover:bg-red-800 px-3 py-2 rounded-md">Logout</Link></li>
                         </>
                     )}
                 </ul>
             </div>
-            <div className="border-b border-slate-950 pt-4 w-full"></div>
+            
         </nav>
     );
 }
