@@ -10,7 +10,7 @@ import MyRecipes from './MyRecipes';
 import FavoriteRecipes from './FavoriteRecipes';
 import AllRecipes from './AllRecipes';
 import EditRecipe from './EditRecipe';
-
+import './tailwind.css';
  
 
 function App() {
