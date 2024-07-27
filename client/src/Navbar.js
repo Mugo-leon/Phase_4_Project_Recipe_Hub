@@ -29,24 +29,6 @@ function Navbar({ isLoggedIn, onLogout, username }) {
         }
     }, [isLoggedIn, username]);
 
-    const handleRecipeDelete = async (recipeId) => {
-        try {
-            const response = await fetch(`/delete_recipe/${recipeId}`, {
-                method: 'DELETE',
-            });
-            const data = await response.json();
-            if (response.ok) {
-                console.log(data.message);
-                // Refresh the recipes list after deletion
-                fetchUserRecipes();
-            } else {
-                console.error('Error deleting recipe:', data.message);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
-
     return (
         <nav className="bg-red-300 p-4">
             <div className="container mx-auto">
@@ -69,7 +51,6 @@ function Navbar({ isLoggedIn, onLogout, username }) {
                     )}
                 </ul>
             </div>
-            
         </nav>
     );
 }
