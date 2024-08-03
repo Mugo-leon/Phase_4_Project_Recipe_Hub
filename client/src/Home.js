@@ -35,10 +35,10 @@ const Home = () => {
 
 
       {/* Popular Recipes Section */}
-      <section className="popular-recipes-section px-6 py-12">
-        <h2 className="text-2xl font-bold mb-6">Popular Recipes</h2>
+      <section className="popular-recipes-section px-6 py-12 bg-rose-300">
+        <h2 className="text-5xl font-bold mb-8 italic text-rose-950 text-center">Popular Recipes</h2>
         <div className="recipe-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="recipe-card bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden">
             <img src="https://weeatatlast.com/wp-content/uploads/2022/03/mishkaki-recipe.jpg" alt="Recipe" className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">Mishkaki</h3>
@@ -48,7 +48,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="recipe-card bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW_Ia_NV_DwCkT7E1O_QaRXrAcHPsbdYkZdyK9Ro4yEA&s" alt="Recipe" className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">Kenyan Style Stew</h3>
@@ -58,7 +58,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="recipe-card bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden">
             <img src="https://www.willflyforfood.net/wp-content/uploads/2021/06/kenyan-food-pilau.jpg" alt="Recipe" className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">Kenyan Pilau</h3>
@@ -69,7 +69,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="recipe-card bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden">
             <img src="https://i.pinimg.com/736x/02/2e/21/022e21cd2998695421a53b0d831d0349.jpg" alt="Recipe" className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">Githeri</h3>
@@ -82,8 +82,8 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="about-section px-6 py-12">
-        <h2 className="text-2xl font-bold mb-6">About Recipe Hub</h2>
+      <section className="about-section px-6 py-12 bg-rose-300">
+        <h2 className="text-5xl font-bold mb-8 text-rose-950 text-center">About Us</h2>
         <p>
           Welcome to our Recipe Hub, where culinary enthusiasts and professional chefs come together to share their passion for cooking and discover new flavors. Our platform provides a vibrant community for chefs to showcase their expertise by posting mouth-watering recipes and culinary creations.
           Whether you're a seasoned chef looking to share your signature dishes or a cooking novice eager to explore the world of gastronomy, our app offers a diverse range of recipes for every skill level and taste preference.
@@ -98,12 +98,13 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="footer bg-gray-800 text-white py-6">
+      <footer className="footer bg-rose-950 text-white py-6">
         <div className="footer-content px-6">
           <div className="footer-section contact">
-            <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-xl font-semibold mb-4 text-center">Contact Us</h3>
             <ul>
               <li><b>Email:</b> info@recipehub.com</li>
+              
               <li><b>Phone:</b> +254-456-7890</li>
               <li><b>Address:</b> 123 Nairobi Street, Nairobi, KENYA</li>
             </ul>
