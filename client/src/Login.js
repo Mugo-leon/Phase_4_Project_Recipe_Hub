@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Link, useNavigate } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom';
+import glasses from './glasses.jpg';
 
 function Login({ onLogin }) {
     const [username, setUsername] = useState('');
@@ -32,10 +33,9 @@ function Login({ onLogin }) {
                 setTimeout(() => {
                     setLoginMessage(''); // Clear the success message after a certain time
                     navigate('/dashboard');
-                }, 2000);} 
-                else {
+                }, 2000);
+            } else {
                 setMessage(data.message || 'Error logging in');
-                
             }
         } catch (error) {
             console.error('Error:', error);
@@ -44,22 +44,42 @@ function Login({ onLogin }) {
     };
 
     return (
-        <div className="login-container">
-        <div className="login-form">
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-            {message && <p className="error-message" style={{ color: 'red' }}>{message}</p>}
-            {loginMessage && <p className="error-message" style={{ color: 'green' }}>{loginMessage}</p>}
-                <label htmlFor="username">Username</label>
-                <input type="text" id="username" name="username" className="input-field" value={username} onChange={(e) => setUsername(e.target.value)} /><br /><br />
-                <label htmlFor="password"><b>Password:</b></label>
-                <input type="password" id="password" name="password" className="input-field" value={password} onChange={(e) => setPassword(e.target.value)} /><br /><br />
-                <input type="submit" value="Login" className="submit-button" />
-                <br/><br/>
-                <Link className= "link" to="/create-user">Don't have an Account? SignUp Here!</Link>
-            </form>
-
-        </div>
+        <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage:  `url(${glasses})` }}>
+            <div className="w-full max-w-md p-8 bg-white shadow-md rounded-md bg-opacity-50  border-rose-950 b_glow">
+                <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+                <form onSubmit={handleSubmit}>
+                    {message && <p className="text-rose-300 mb-4">{message}</p>}
+                    {loginMessage && <p className="text-rose-300 mb-4">{loginMessage}</p>}
+                    <div className="mb-4">
+                        <label htmlFor="username" className="block text-gray-700">Username</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            className="mt-2 p-2 w-full border rounded-md" 
+                            value={username} 
+                            onChange={(e) => setUsername(e.target.value)} 
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label htmlFor="password" className="block text-gray-950">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            className="mt-2 p-2 w-full border rounded-md" 
+                            value={password} 
+                            onChange={(e) => setPassword(e.target.value)} 
+                        />
+                    </div>
+                    <div className="flex items-center justify-between">
+                        <button type="submit" className="bg-rose-950 text-white py-2 px-4 rounded-md hover:bg-rose-950 transition-colors duration-200">
+                            Login
+                        </button>
+                        <Link to="/create-user" className="text-rose-950 hover:underline">Don't have an Account? SignUp Here!</Link>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }

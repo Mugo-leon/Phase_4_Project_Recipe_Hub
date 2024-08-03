@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import pancake from './pancake.jpg';
+
 
 function CreateRecipe({ user_id }) {
     const [name, setName] = useState('');
@@ -43,26 +45,44 @@ function CreateRecipe({ user_id }) {
     };
 
     return (
-        <div>
-            <div className="add-recipe-container">
+        <div 
+            className="flex items-center justify-center min-h-screen bg-cover bg-center"
+            style={{ backgroundImage:  `url(${pancake})` }} // Replace with your image URL
+        >
+            <div className="w-full max-w-md p-8 bg-white bg-opacity-50 shadow-md rounded-md ">
                 {message && (
-                    <div className="success-message" style={{ color: 'green', fontWeight: 'bold' }}>
+                    <div className="text-rose-950 font-bold mb-4">
                         {message}
                     </div>
                 )}
-                <h2>Create New Recipe</h2>
-                <form onSubmit={handleSubmit} className="recipe-form">
+                <h2 className="text-2xl font-bold mb-6 text-center">Create New Recipe</h2>
+                <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+                        <label htmlFor="name" className="block text-gray-700">Name:</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            className="mt-2 p-2 w-full border rounded-md" 
+                            value={name} 
+                            onChange={(e) => setName(e.target.value)} 
+                        />
                     </div>
-                    <br /><br />
                     <div>
-                        <label htmlFor="description">Description:</label>
-                        <textarea id="description" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+                        <label htmlFor="description" className="block text-gray-700">Description:</label>
+                        <textarea 
+                            id="description" 
+                            name="description" 
+                            className="mt-2 p-2 w-full border rounded-md h-32" 
+                            value={description} 
+                            onChange={(e) => setDescription(e.target.value)} 
+                        />
                     </div>
-                    <br /><br />
-                    <input type="submit" value="Create Recipe" className="submit-button" />
+                    <div className="flex items-center justify-between">
+                        <button type="submit" className="bg-rose-950 text-white py-2 px-4 rounded-md hover:bg-rose-950 transition-colors duration-200">
+                            Create Recipe
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

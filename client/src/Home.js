@@ -38,7 +38,7 @@ const Home = () => {
       <section className="popular-recipes-section px-6 py-12 bg-rose-300">
         <h2 className="text-5xl font-bold mb-8 italic text-rose-950 text-center">Popular Recipes</h2>
         <div className="recipe-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden">
+          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden  border-rose-950 b_glow">
             <img src="https://weeatatlast.com/wp-content/uploads/2022/03/mishkaki-recipe.jpg" alt="Recipe" className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">Mishkaki</h3>
@@ -48,7 +48,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden">
+          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden  border-rose-950 b_glow">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW_Ia_NV_DwCkT7E1O_QaRXrAcHPsbdYkZdyK9Ro4yEA&s" alt="Recipe" className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">Kenyan Style Stew</h3>
@@ -58,7 +58,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden">
+          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden  border-rose-950 b_glow">
             <img src="https://www.willflyforfood.net/wp-content/uploads/2021/06/kenyan-food-pilau.jpg" alt="Recipe" className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">Kenyan Pilau</h3>
@@ -69,7 +69,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden">
+          <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden  border-rose-950 b_glow">
             <img src="https://i.pinimg.com/736x/02/2e/21/022e21cd2998695421a53b0d831d0349.jpg" alt="Recipe" className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">Githeri</h3>
@@ -98,7 +98,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="footer bg-rose-950 text-white py-6">
+      <footer className="footer bg-rose-950 text-rose-200 py-6">
         <div className="footer-content px-6">
           <div className="footer-section contact">
             <h3 className="text-xl font-semibold mb-4 text-center">Contact Us</h3>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Rose from './Rose.jpg';
+import candy from './candy.jpg';
 
 
 function Dashboard({ username }) {
@@ -14,7 +14,7 @@ function Dashboard({ username }) {
         <div 
             className='dashboard' 
             style={{
-                backgroundImage: `url(${Rose})`,
+                backgroundImage: `url(${candy})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 height: '100vh', // Adjust height as needed
@@ -30,7 +30,7 @@ function Dashboard({ username }) {
                 opacity: isVisible ? 1 : 0, 
                 transition: 'opacity 1s ease-in-out'
             }} className='font-semibold mb-8 leading-normal text-rose-950'>
-                Welcome to Your Kitchen, Chef {username}
+                Welcome to Recipe Hub, {username}
             </h2>
             <p style={{
                 textAlign: "center",

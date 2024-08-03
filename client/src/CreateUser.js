@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import glasses from './glasses.jpg';
+
 
 function CreateUser() {
     const [username, setUsername] = useState('');
@@ -29,8 +31,7 @@ function CreateUser() {
                 setMessage('User Created Successfully');
                 setTimeout(() => {
                     navigate('/login');
-            }, 2000);
-    
+                }, 2000);
             } else {
                 setMessage('Error creating user');
             }
@@ -41,22 +42,41 @@ function CreateUser() {
     };
 
     return (
-        <div className="login-container">
-        <div className='sign-form'>
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSubmit}>
-            {message && <p className="error-message" style={{ color: 'green' }}>{message}</p>}
-                <label htmlFor="username"><b>Username:</b></label>
-                <input type="text" id="username" name="username" className="input-field" value={username} onChange={(e) => setUsername(e.target.value)} /><br /><br />
-                <label htmlFor="password"><b>Password:</b></label>
-                <input type="password" id="password" name="password" className="input-field" value={password} onChange={(e) => setPassword(e.target.value)} /><br /><br />
-                <input type="submit" value="Sign Up" className="submit-button"/>
-                <br/><br/>
-                <Link className= "link" to="/login">Already have an Account? Login Here!</Link>
-            </form>
-            
-
-        </div>
+        <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${glasses})` }}>
+            <div className="w-full max-w-md p-8 bg-white shadow-md rounded-md bg-opacity-50  border-rose-950 b_glow">
+                <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
+                <form onSubmit={handleSubmit}>
+                    {message && <p className="text-green-500 mb-4">{message}</p>}
+                    <div className="mb-4">
+                        <label htmlFor="username" className="block text-gray-700">Username</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            className="mt-2 p-2 w-full border rounded-md" 
+                            value={username} 
+                            onChange={(e) => setUsername(e.target.value)} 
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label htmlFor="password" className="block text-gray-700">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            className="mt-2 p-2 w-full border rounded-md" 
+                            value={password} 
+                            onChange={(e) => setPassword(e.target.value)} 
+                        />
+                    </div>
+                    <div className="flex items-center justify-between">
+                        <button type="submit" className="bg-rose-950 text-white py-2 px-4 rounded-md hover:bg-rose-950 transition-colors duration-200">
+                            Sign Up
+                        </button>
+                        <Link to="/login" className="text-rose-950 hover:underline">Already have an Account? Login Here!</Link>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }
