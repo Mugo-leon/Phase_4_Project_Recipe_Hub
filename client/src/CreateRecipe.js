@@ -47,9 +47,9 @@ function CreateRecipe({ user_id }) {
     return (
         <div 
             className="flex items-center justify-center min-h-screen bg-cover bg-center"
-            style={{ backgroundImage:  `url(${pancake})` }} // Replace with your image URL
+            style={{ backgroundImage:  `url(${pancake})` }} 
         >
-            <div className="w-full max-w-md p-8 bg-white bg-opacity-50 shadow-md rounded-md ">
+            <div className="w-full max-w-md p-8 bg-white bg-opacity-50 shadow-md rounded-md border-rose-950 b_glow ">
                 {message && (
                     <div className="text-rose-950 font-bold mb-4">
                         {message}
@@ -58,7 +58,7 @@ function CreateRecipe({ user_id }) {
                 <h2 className="text-2xl font-bold mb-6 text-center">Create New Recipe</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label htmlFor="name" className="block text-gray-700">Name:</label>
+                        <label htmlFor="name" className="block text-slate-950">Name:</label>
                         <input 
                             type="text" 
                             id="name" 
@@ -69,7 +69,7 @@ function CreateRecipe({ user_id }) {
                         />
                     </div>
                     <div>
-                        <label htmlFor="description" className="block text-gray-700">Description:</label>
+                        <label htmlFor="description" className="block text-slate-950">Description:</label>
                         <textarea 
                             id="description" 
                             name="description" 

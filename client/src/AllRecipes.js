@@ -50,7 +50,7 @@ const AllRecipes = () => {
         {recipes.map((recipe) => (
           <div className="bg-rose-200 p-4 rounded-lg shadow-md border-rose-950 b_glow" key={recipe.id}>
             <h3 className="text-xl font-semibold mb-2">{recipe.name}</h3>
-            <p className="text-gray-700 mb-4">{recipe.description}</p>
+            <p className="text-slate-950 mb-4">{recipe.description}</p>
             <button
               onClick={() => handleFavorite(recipe.id)}
               className="bg-rose-950 text-white py-2 px-4 rounded-md hover:bg-rose-950 transition-colors duration-200"

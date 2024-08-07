@@ -85,15 +85,14 @@ const Home = () => {
       <section className="about-section px-6 py-12 bg-rose-300">
         <h2 className="text-5xl font-bold mb-8 text-rose-950 text-center">About Us</h2>
         <p>
-          Welcome to our Recipe Hub, where culinary enthusiasts and professional chefs come together to share their passion for cooking and discover new flavors. Our platform provides a vibrant community for chefs to showcase their expertise by posting mouth-watering recipes and culinary creations.
-          Whether you're a seasoned chef looking to share your signature dishes or a cooking novice eager to explore the world of gastronomy, our app offers a diverse range of recipes for every skill level and taste preference.
+          Welcome to Recipe Hub, where culinary enthusiasts and professional chefs come together to share their passion for cooking and discover new flavors. Our platform provides a vibrant community for chefs to showcase their expertise by posting mouth-watering recipes and culinary creations.
+          Whether you're a seasoned chef looking to share your signature dishes or a cooking novice eager to explore the world of gastronomy, this website offers a diverse range of recipes for every skill level and taste preference.
         </p>
         <p>Join our community to:</p>
         <ul className="list-disc list-inside ml-4">
           <li>Explore a vast collection of recipes from talented chefs around the world.</li>
           <li>Discover new cooking techniques, ingredients, and flavor combinations.</li>
-          <li>Connect with fellow food enthusiasts, share cooking tips, and exchange culinary experiences.</li>
-          <li>Showcase your culinary creations and receive feedback from a supportive community of chefs and food lovers.</li>
+          <li>Showcase your culinary creations.</li>
         </ul>
       </section>
 

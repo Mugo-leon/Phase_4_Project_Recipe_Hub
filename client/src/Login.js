@@ -51,7 +51,7 @@ function Login({ onLogin }) {
                     {message && <p className="text-rose-300 mb-4">{message}</p>}
                     {loginMessage && <p className="text-rose-300 mb-4">{loginMessage}</p>}
                     <div className="mb-4">
-                        <label htmlFor="username" className="block text-gray-700">Username</label>
+                        <label htmlFor="username" className="block text-slate-950">Username</label>
                         <input 
                             type="text" 
                             id="username" 
@@ -73,7 +73,7 @@ function Login({ onLogin }) {
                         />
                     </div>
                     <div className="flex items-center justify-between">
-                        <button type="submit" className="bg-rose-950 text-white py-2 px-4 rounded-md hover:bg-rose-950 transition-colors duration-200">
+                        <button type="submit" className="bg-rose-950 text-white py-2 px-4 rounded-md hover:bg-rose-300 transition-colors duration-200">
                             Login
                         </button>
                         <Link to="/create-user" className="text-rose-950 hover:underline">Don't have an Account? SignUp Here!</Link>

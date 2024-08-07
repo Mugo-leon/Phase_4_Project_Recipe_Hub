@@ -47,7 +47,7 @@ function MyRecipes({ username }) {
                 {recipes.map(recipe => (
                     <li key={recipe.id} className="p-6 bg-rose-200 shadow-md rounded-md border-rose-950 b_glow">
                         <h3 className="text-xl font-semibold mb-2">Recipe Name: {recipe.name}</h3>
-                        <p className="text-gray-700 mb-4"><b>DESCRIPTION:</b> {recipe.description}</p>
+                        <p className="text-slate-950 mb-4"><b>DESCRIPTION:</b> {recipe.description}</p>
                         <div className="flex space-x-4">
                             <Link 
                                 to={`/edit_recipe/${username}/${recipe.id}`} 
