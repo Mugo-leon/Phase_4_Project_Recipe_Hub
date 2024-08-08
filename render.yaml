@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: flask-backend
+    env: python
+    buildCommand: pipenv install
+    startCommand: python app.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    region: oregon  # Change to your preferred region
+
+  - type: web
+    name: react-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    region: oregon  # Change to your preferred region
