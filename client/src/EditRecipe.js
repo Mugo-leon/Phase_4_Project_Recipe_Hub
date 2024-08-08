@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import platter from './platter.jpg';
 function EditRecipe({ username }) {
     const [recipes, setRecipes] = useState([]);
     const [selectedRecipeId, setSelectedRecipeId] = useState('');
@@ -12,6 +12,7 @@ function EditRecipe({ username }) {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const token = "YOUR_BEARER_TOKEN";  
+    
     useEffect(() => {
         const fetchUserRecipes = async () => {
             try {
@@ -69,11 +70,7 @@ function EditRecipe({ username }) {
 
     const handleSelectRecipe = (e) => {
         setSelectedRecipeId(e.target.value);
-        
-        
         const selectedRecipe = recipes.find(recipe => recipe.id === parseInt(e.target.value));
-        
-        // Update the recipe state with the selected recipe details
         if (selectedRecipe) {
             setRecipe({
                 name: selectedRecipe.name,
@@ -123,17 +120,23 @@ function EditRecipe({ username }) {
     };
 
     return (
-        <div className="form-container">
-            <h2>Edit Recipe</h2>
+     <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${platter})` }}>
+        <div className="max-w-lg mx-auto  p-8 rounded-lg shadow-md mt-12 bg-cover bg-white bg-opacity-30 bg-center border-rose-950 b_glow">
+            <h2 className="text-2xl font-semibold text-slate-950 mb-6">Edit Recipe</h2>
             {message && (
-                    <div className="success-message" style={{ color: 'green', fontWeight: 'bold', paddingBottom: 25 }}>
-                        {message}
-                    </div>
-                )}
+                <div className="mb-4 p-3 bg-green-100 text-green-700 rounded">
+                    {message}
+                </div>
+            )}
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="selectRecipe">Select Recipe:</label>
-                    <select id="selectRecipe" onChange={handleSelectRecipe} value={selectedRecipeId}>
+                <div className="mb-4">
+                    <label htmlFor="selectRecipe" className="block text-slate-950 font-medium mb-2">Select Recipe:</label>
+                    <select 
+                        id="selectRecipe" 
+                        onChange={handleSelectRecipe} 
+                        value={selectedRecipeId}
+                        className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-slate-950"
+                    >
                         <option value="" disabled>Select a recipe</option>
                         {recipes.map(recipe => (
                             <option key={recipe.id} value={recipe.id}>
@@ -142,26 +145,35 @@ function EditRecipe({ username }) {
                         ))}
                     </select>
                 </div>
-                <div>
-                    <label htmlFor="name">Name:</label>
+                <div className="mb-4">
+                    <label htmlFor="name" className="block text-slate-950 font-medium mb-2">Name:</label>
                     <input 
                         type="text" 
                         id="name" 
                         value={recipe.name} 
                         onChange={(e) => setRecipe({ ...recipe, name: e.target.value })} 
+                        className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-slate-950"
                     />
                 </div>
-                <div>
-                    <label htmlFor="description">Description:</label>
+                <div className="mb-4">
+                    <label htmlFor="description" className="block text-slate-950 font-medium mb-2">Description:</label>
                     <textarea 
                         id="description" 
                         value={recipe.description} 
                         onChange={(e) => setRecipe({ ...recipe, description: e.target.value })} 
+                        className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
                     ></textarea>
                 </div>
-                <button type="submit">Save Changes</button>
+                <button 
+                    type="submit" 
+                    className="w-full bg-rose-950 text-white p-2 rounded-lg hover:bg-rose-900 transition-colors"
+                >
+                    Save Changes
+                </button>
             </form>
+          </div>
         </div>
+        
     );
 }
 

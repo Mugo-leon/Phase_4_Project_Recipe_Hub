@@ -49,7 +49,7 @@ function CreateRecipe({ user_id }) {
             className="flex items-center justify-center min-h-screen bg-cover bg-center"
             style={{ backgroundImage:  `url(${pancake})` }} 
         >
-            <div className="w-full max-w-md p-8 bg-white bg-opacity-50 shadow-md rounded-md border-rose-950 b_glow ">
+            <div className="w-full max-w-md p-8 bg-white bg-opacity-30 shadow-md rounded-md border-rose-950 b_glow ">
                 {message && (
                     <div className="text-rose-950 font-bold mb-4">
                         {message}

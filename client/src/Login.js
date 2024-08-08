@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import glasses from './glasses.jpg';
+import platter from './platter.jpg';
 
 function Login({ onLogin }) {
     const [username, setUsername] = useState('');
@@ -44,7 +44,7 @@ function Login({ onLogin }) {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage:  `url(${glasses})` }}>
+        <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage:  `url(${platter})` }}>
             <div className="w-full max-w-md p-8 bg-white shadow-md rounded-md bg-opacity-50  border-rose-950 b_glow">
                 <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
                 <form onSubmit={handleSubmit}>

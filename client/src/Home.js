@@ -1,42 +1,44 @@
 import React from 'react';
-import hand from './hand.jpg';
+import burger from './burger.jpg';
 
 const Home = () => {
   return (
     <div>
       {/* Hero Section */}
       <header>
-        <section
-          className="hero-section flex items-center justify-center px-6 lg:px-16 py-12 bg-rose-950"
-          style={{
-            backgroundImage: `url(${hand})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            minHeight: '100vh',
-            margin: '0',
-            padding: '0',
-            boxSizing: 'border-box',
-          }}
-        >
-          <div className="hero-content text-center max-w-lg mx-auto">
-            <h1 className="text-[52px] font-semibold mb-8 leading-normal italic text-rose-950"
-            style={{ marginTop: '-250px' }}>
-              Cooking Made Easy{' '}
-              <span className="text-[52px] font-semibold mb-8 leading-normal text-rose-300">
-                One Recipe at a Time
-              </span>
-            </h1>
-          
-          
-          </div>
-        </section>
-      </header>
+  <section
+    className="hero-section flex items-center justify-start px-6 lg:px-16 py-12 bg-rose-950"
+    style={{
+      backgroundImage: `url(${burger})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '100vh',
+      margin: '0',
+      padding: '0',
+      boxSizing: 'border-box',
+    }}
+  >
+    <div className="hero-content text-left max-w-lg ml-12 mt-40">
+      <h1
+        className="text-[60px] font-semibold mb-8 leading-normal text-white font-serif"
+        style={{ marginTop: '-250px' }}
+      >
+        Recipe Hub{' '}
+        
+      </h1>
+      <p className='h-full lg:py-40 flex flex-col justify-center lg:items-start items-center text-white text-left'>Welcome to Recipe Hub, where culinary enthusiasts and professional chefs come together to share their passion for cooking and discover new flavors. Our platform provides a vibrant community for chefs to showcase their expertise by posting mouth-watering recipes and culinary creations.
+          Whether you're a seasoned chef looking to share your signature dishes or a cooking novice eager to explore the world of gastronomy, this website offers a diverse range of recipes for every skill level and taste preference.
+        </p>
+    </div>
+  </section>
+</header>
+
 
 
 
       {/* Popular Recipes Section */}
-      <section className="popular-recipes-section px-6 py-12 bg-rose-300">
-        <h2 className="text-5xl font-bold mb-8 italic text-rose-950 text-center">Popular Recipes</h2>
+      <section className="popular-recipes-section px-6 py-12 bg-slate-950">
+        <h2 className="text-5xl font-bold mb-8 italic text-rose-200 text-center">Popular Recipes</h2>
         <div className="recipe-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden  border-rose-950 b_glow">
             <img src="https://weeatatlast.com/wp-content/uploads/2022/03/mishkaki-recipe.jpg" alt="Recipe" className="w-full h-48 object-cover"/>

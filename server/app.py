@@ -250,4 +250,4 @@ def get_favorite_recipes():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=10000)
+    app.run(port=5555, debug=True)

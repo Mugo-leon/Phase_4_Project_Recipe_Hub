@@ -7,11 +7,11 @@ services:
     envVars:
       - key: FLASK_ENV
         value: production
-    region: oregon  # Change to your preferred region
+    region: oregon 
 
   - type: web
     name: react-frontend
     env: static
     buildCommand: npm install && npm run build
     staticPublishPath: build
-    region: oregon  # Change to your preferred region
+    region: oregon 
