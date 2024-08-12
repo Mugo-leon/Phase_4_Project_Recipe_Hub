@@ -1,6 +1,7 @@
 import React from 'react';
 import burger from './burger.jpg';
 
+
 const Home = () => {
   return (
     <div>
@@ -18,18 +19,17 @@ const Home = () => {
       boxSizing: 'border-box',
     }}
   >
-    <div className="hero-content text-left max-w-lg ml-12 mt-40">
-      <h1
-        className="text-[60px] font-semibold mb-8 leading-normal text-white font-serif"
-        style={{ marginTop: '-250px' }}
-      >
-        Recipe Hub{' '}
-        
-      </h1>
-      <p className='h-full lg:py-40 flex flex-col justify-center lg:items-start items-center text-white text-left'>Welcome to Recipe Hub, where culinary enthusiasts and professional chefs come together to share their passion for cooking and discover new flavors. Our platform provides a vibrant community for chefs to showcase their expertise by posting mouth-watering recipes and culinary creations.
-          Whether you're a seasoned chef looking to share your signature dishes or a cooking novice eager to explore the world of gastronomy, this website offers a diverse range of recipes for every skill level and taste preference.
-        </p>
-    </div>
+    <div className="hero-content text-center lg:text-left max-w-lg mx-auto lg:ml-12 mt-20 lg:mt-40">
+  <h1
+    className="text-4xl md:text-5xl lg:text-[60px] font-semibold mb-6 lg:mb-10 leading-tight text-rose-300 font-serif"
+  >
+    Recipe Hub
+  </h1>
+  <p className='lg:py-10 flex flex-col justify-center lg:items-start items-center text-white text-center lg:text-left text-lg md:text-xl'>
+    Welcome to Recipe Hub, where culinary enthusiasts and professional chefs come together to share their cooking skills and discover new flavors.
+  </p>
+</div>
+
   </section>
 </header>
 
@@ -38,7 +38,7 @@ const Home = () => {
 
       {/* Popular Recipes Section */}
       <section className="popular-recipes-section px-6 py-12 bg-slate-950">
-        <h2 className="text-5xl font-bold mb-8 italic text-rose-200 text-center">Popular Recipes</h2>
+        <h2 className="text-5xl font-bold mb-8 text-rose-300 text-center">Popular Recipes</h2>
         <div className="recipe-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="recipe-card bg-rose-300 rounded-lg shadow-lg overflow-hidden  border-rose-950 b_glow">
             <img src="https://weeatatlast.com/wp-content/uploads/2022/03/mishkaki-recipe.jpg" alt="Recipe" className="w-full h-48 object-cover"/>
@@ -99,7 +99,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer className="footer bg-rose-950 text-rose-200 py-6">
+      <footer className="footer bg-slate-950 text-white py-6">
         <div className="footer-content px-6">
           <div className="footer-section contact">
             <h3 className="text-xl font-semibold mb-4 text-center">Contact Us</h3>
