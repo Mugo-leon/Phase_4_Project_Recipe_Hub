@@ -18,7 +18,7 @@ function Login({ onLogin }) {
         };
 
         try {
-            const response = await fetch('/login', {
+            const response = await fetch('https://nine-project-recipe-hub-23vx.onrender.com/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -44,8 +44,8 @@ function Login({ onLogin }) {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage:  `url(${platter})` }}>
-            <div className="w-full max-w-md p-8 bg-white shadow-md rounded-md bg-opacity-50  border-rose-950 b_glow">
+        <div className="flex items-center justify-center min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${platter})` }}>
+            <div className="w-full max-w-md p-8 bg-white shadow-md rounded-md bg-opacity-50 border-rose-950 b_glow">
                 <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
                 <form onSubmit={handleSubmit}>
                     {message && <p className="text-rose-300 mb-4">{message}</p>}
