@@ -19,7 +19,7 @@ function CreateRecipe({ user_id }) {
         };
 
         try {
-            const response = await fetch('/create_recipe', {
+            const response = await fetch('https://nine-project-recipe-hub-23vx.onrender.com/create_recipe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
