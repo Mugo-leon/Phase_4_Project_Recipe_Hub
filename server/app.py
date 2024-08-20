@@ -4,10 +4,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
 from models import db, User, Recipe, FavoriteRecipe
+from flask_sessions import Session
 
 def create_app():
     app = Flask(__name__)
     app.config['SESSION_TYPE'] = 'sqlalchemy'
+    Session(app)
     CORS(app, supports_credentials=True, resources={r"/*": {"origins": "https://nine-project-recipe-hub.onrender.com"}})
 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'

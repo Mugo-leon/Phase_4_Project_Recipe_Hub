@@ -11,10 +11,11 @@ function CreateRecipe({ user_id }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Prepare the recipe data
         const recipeData = {
             name: name,
             description: description,
-            user: user_id // Associate the new recipe with the logged-in user
+            // No need to include user_id here as it's expected to be in the session
         };
 
         try {
@@ -24,16 +25,16 @@ function CreateRecipe({ user_id }) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(recipeData),
-                credentials: 'include' // Include cookies (such as session cookies) with the request
+                credentials: 'include' // Ensure cookies (such as session cookies) are included
             });
 
             const data = await response.json();
             if (response.ok) {
-                setMessage('Recipe created successfully'); // Set success message
+                setMessage('Recipe created successfully');
                 setTimeout(() => {
-                    setMessage(''); // Clear the success message after a certain time
+                    setMessage('');
                     navigate('/dashboard');
-                }, 3000); // Auto-dismiss after 3 seconds
+                }, 3000); // Clear message after 3 seconds
             } else {
                 setMessage(data.error || 'Error creating recipe');
             }
@@ -46,9 +47,9 @@ function CreateRecipe({ user_id }) {
     return (
         <div 
             className="flex items-center justify-center min-h-screen bg-cover bg-center"
-            style={{ backgroundImage:  `url(${pancake})` }} 
+            style={{ backgroundImage: `url(${pancake})` }} 
         >
-            <div className="w-full max-w-md p-8 bg-white bg-opacity-30 shadow-md rounded-md border-rose-950 b_glow ">
+            <div className="w-full max-w-md p-8 bg-white bg-opacity-30 shadow-md rounded-md border-rose-950 b_glow">
                 {message && (
                     <div className="text-rose-950 font-bold mb-4">
                         {message}
