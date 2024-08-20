@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import pancake from './pancake.jpg';
 
-
 function CreateRecipe({ user_id }) {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
@@ -23,9 +22,9 @@ function CreateRecipe({ user_id }) {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'UserId': user_id // Pass the logged-in username in the headers
                 },
-                body: JSON.stringify(recipeData)
+                body: JSON.stringify(recipeData),
+                credentials: 'include' // Include cookies (such as session cookies) with the request
             });
 
             const data = await response.json();
