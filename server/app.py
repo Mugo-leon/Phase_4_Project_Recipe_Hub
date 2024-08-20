@@ -127,7 +127,8 @@ def get_users():
 @app.route('/create_recipe', methods=['POST'])
 def create_recipe():
     data = request.json
-    user_id = session.get('user_id')  # Correctly fetch user_id from session
+    user_id = session.get('user_id')
+    print(f"User ID retrieved from session: {user_id}")   # Correctly fetch user_id from session
     
     if not user_id:
         return jsonify({'error': 'User ID not provided in session'}), 400
