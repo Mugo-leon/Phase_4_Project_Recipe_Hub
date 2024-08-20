@@ -7,7 +7,9 @@ from models import db, User, Recipe, FavoriteRecipe
 
 def create_app():
     app = Flask(__name__)
-    CORS(app, resources={r"/*": {"origins": "https://nine-project-recipe-hub.onrender.com"}})
+    app.config['SESSION_TYPE'] = 'sqlalchemy'
+    CORS(app, supports_credentials=True, resources={r"/*": {"origins": "https://nine-project-recipe-hub.onrender.com"}})
+
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = 'your_secret_key_here' 
