@@ -8,17 +8,23 @@ from flask_session import Session
 
 def create_app():
     app = Flask(__name__)
-    app.config['SESSION_TYPE'] = 'sqlalchemy'
-    Session(app)
-    CORS(app, supports_credentials=True, resources={r"/*": {"origins": "https://nine-project-recipe-hub.onrender.com"}})
 
+    # Configure SQLAlchemy before initializing Session
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['SECRET_KEY'] = 'your_secret_key_here' 
-    CORS(app)
+    app.config['SECRET_KEY'] = 'your_secret_key_here'
+    app.config['SESSION_TYPE'] = 'sqlalchemy'
+    
+    # Initialize SQLAlchemy
     db.init_app(app)
     migrate = Migrate(app, db)
+
+    # Initialize Session after SQLAlchemy is configured
+    Session(app)
     
+    # CORS setup
+    CORS(app, supports_credentials=True, resources={r"/*": {"origins": "https://nine-project-recipe-hub.onrender.com"}})
+
     return app
 
 app = create_app()
