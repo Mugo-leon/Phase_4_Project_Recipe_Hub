@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
 from models import db, User, Recipe, FavoriteRecipe
-from flask_sessions import Session
+from flask_session import Session
 
 def create_app():
     app = Flask(__name__)
