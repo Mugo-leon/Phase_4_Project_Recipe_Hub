@@ -3,31 +3,30 @@ from flask import Flask, jsonify, request, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
-from models import db, User, Recipe, FavoriteRecipe
 from flask_session import Session
+
+db = SQLAlchemy()
+migrate = Migrate()
 
 def create_app():
     app = Flask(__name__)
 
-    # Configure SQLAlchemy before initializing Session
+    # Configure the app
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = 'your_secret_key_here'
     app.config['SESSION_TYPE'] = 'sqlalchemy'
-    
-    # Initialize SQLAlchemy
-    db.init_app(app)
-    migrate = Migrate(app, db)
 
-    # Initialize Session after SQLAlchemy is configured
+    # Initialize extensions
+    db.init_app(app)
+    migrate.init_app(app, db)
     Session(app)
-    
-    # CORS setup
     CORS(app, supports_credentials=True, resources={r"/*": {"origins": "https://nine-project-recipe-hub.onrender.com"}})
 
     return app
 
 app = create_app()
+
 
 @app.route('/get_user_recipes/<username>', methods=['GET'])
 def get_user_recipes(username):
