@@ -7,7 +7,9 @@ function MyRecipes({ username }) {
     useEffect(() => {
         const fetchMyRecipes = async () => {
             try {
-                const response = await fetch(`https://nine-project-recipe-hub-23vx.onrender.com/get_user_recipes/${username}`);
+                const response = await fetch(`https://nine-project-recipe-hub-23vx.onrender.com/get_user_recipes/${username}`, {
+                    credentials: 'include', // Ensure credentials are included
+                });
                 const data = await response.json();
                 if (response.ok) {
                     setRecipes(data.recipes);
@@ -26,10 +28,10 @@ function MyRecipes({ username }) {
         try {
             const response = await fetch(`https://nine-project-recipe-hub-23vx.onrender.com/delete_recipe/${recipeId}`, {
                 method: 'DELETE',
+                credentials: 'include', // Ensure credentials are included
             });
             const data = await response.json();
             if (response.ok) {
-                // Filter out the deleted recipe from the recipes list
                 setRecipes(recipes.filter(recipe => recipe.id !== recipeId));
                 console.log('Recipe deleted successfully');
             } else {
