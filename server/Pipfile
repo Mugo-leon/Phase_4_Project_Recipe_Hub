@@ -9,6 +9,7 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask-cors = "*"
 flask-sessions = "*"
+flask-session = "*"
 
 [dev-packages]
 
