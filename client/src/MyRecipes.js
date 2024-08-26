@@ -7,7 +7,7 @@ function MyRecipes({ username }) {
     useEffect(() => {
         const fetchMyRecipes = async () => {
             try {
-                const response = await fetch(`/get_user_recipes/${username}`);
+                const response = await fetch(`https://nine-project-recipe-hub-23vx.onrender.com/get_user_recipes/${username}`);
                 const data = await response.json();
                 if (response.ok) {
                     setRecipes(data.recipes);
@@ -24,7 +24,7 @@ function MyRecipes({ username }) {
 
     const handleDeleteRecipe = async (recipeId) => {
         try {
-            const response = await fetch(`/delete_recipe/${recipeId}`, {
+            const response = await fetch(`https://nine-project-recipe-hub-23vx.onrender.com/delete_recipe/${recipeId}`, {
                 method: 'DELETE',
             });
             const data = await response.json();
