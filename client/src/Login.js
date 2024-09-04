@@ -21,7 +21,8 @@ function Login({ onLogin }) {
             const response = await fetch('https://nine-project-recipe-hub-23vx.onrender.com/login', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify(userData)
             });
