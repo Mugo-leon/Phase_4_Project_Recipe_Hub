@@ -21,18 +21,18 @@ function Login({ onLogin }) {
             const response = await fetch('https://nine-project-recipe-hub-23vx.onrender.com/login', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(userData)
             });
 
             const data = await response.json();
             if (response.ok) {
+                const userId = data.user_id;  // Extract the user ID from the response
                 setLoginMessage('Login Successful');
-                onLogin(username);
+                onLogin(username, userId);  // Pass the user ID to the parent component
                 setTimeout(() => {
-                    setLoginMessage(''); // Clear the success message after a certain time
+                    setLoginMessage('');
                     navigate('/dashboard');
                 }, 2000);
             } else {
