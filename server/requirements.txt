@@ -2,7 +2,7 @@ alembic==1.13.2
 blinker==1.8.2
 cachelib==0.13.0
 click==8.1.7
-Flask==3.0.3
+Flask==2.3.0
 Flask-Cors==4.0.1
 Flask-Migrate==4.0.7
 Flask-Session==0.8.0
