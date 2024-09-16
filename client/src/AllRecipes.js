@@ -11,7 +11,7 @@ const AllRecipes = () => {
 
   const fetchRecipes = async () => {
     try {
-      const response = await fetch('https://nine-project-recipe-hub-23vx.onrender.com/recipes');
+      const response = await fetch('/recipes');
       const data = await response.json();
       if (response.ok) {
         setRecipes(data.recipes);
@@ -25,7 +25,7 @@ const AllRecipes = () => {
 
   const handleFavorite = async (recipeId) => {
     try {
-      const response = await fetch(`https://nine-project-recipe-hub-23vx.onrender.com/favorite_recipe/${recipeId}`, {
+      const response = await fetch(`/favorite_recipe/${recipeId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

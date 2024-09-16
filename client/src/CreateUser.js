@@ -17,7 +17,7 @@ function CreateUser() {
         };
 
         try {
-            const response = await fetch('https://nine-project-recipe-hub-23vx.onrender.com/create_user', {
+            const response = await fetch('/create_user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

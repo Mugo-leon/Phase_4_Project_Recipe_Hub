@@ -1,3 +1,4 @@
+from models import db, User, Recipe, FavoriteRecipe
 from flask import Flask, jsonify, request, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -6,8 +7,9 @@ from flask_session import Session
 
 
 # Initialize SQLAlchemy and Migrate
-db = SQLAlchemy()
+
 migrate = Migrate()
+
 
 def create_app():
     app = Flask(__name__)
@@ -15,15 +17,16 @@ def create_app():
     # Configure the app
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['SECRET_KEY'] = 'your_secret_key_here'
     app.config['SESSION_TYPE'] = 'sqlalchemy'
-    app.config['SESSION_SQLALCHEMY'] = db  # Ensure that Flask-Session uses the existing SQLAlchemy instance
-
+    app.config['SESSION_SQLALCHEMY'] = db  # Use the existing SQLAlchemy instance for sessions
+    
+    app.config['SECRET_KEY'] = 'your_secret_key_here'
+    
     # Initialize extensions
     db.init_app(app)
     migrate.init_app(app, db)
     Session(app)
-    CORS(app, resources={r"/*": {"origins": "*"}}) 
+    CORS(app, resources={r"/*": {"origins": ""}}) 
 
     return app
 

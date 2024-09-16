@@ -21,7 +21,7 @@ const Home = () => {
   >
     <div className="hero-content text-center lg:text-left max-w-lg mx-auto lg:ml-12 mt-20 lg:mt-40">
   <h1
-    className="text-4xl md:text-5xl lg:text-[60px] font-semibold mb-6 lg:mb-10 leading-tight text-rose-300 font-serif"
+    className="text-6xl md:text-5xl lg:text-[60px] font-italic mb-6 lg:mb-10 leading-tight text-rose-300 font-serif"
   >
     Recipe Hub
   </h1>

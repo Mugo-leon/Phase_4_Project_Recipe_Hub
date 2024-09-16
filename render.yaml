@@ -9,6 +9,10 @@ services:
         value: production
     region: oregon 
 
+
+
+    
+
   - type: web
     name: react-frontend
     env: static

@@ -18,7 +18,7 @@ function Login({ onLogin }) {
         };
 
         try {
-            const response = await fetch('https://nine-project-recipe-hub-23vx.onrender.com/login', {
+            const response = await fetch('/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
