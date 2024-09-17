@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 from flask_session import Session
 
-CORS(app, supports_credentials=True, resources={r"/*": {"origins": "https://nine-project-recipe-hub.onrender.com"}})
+
 # Initialize SQLAlchemy and Migrate
 
 migrate = Migrate()
@@ -26,7 +26,7 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
     Session(app)
-     
+    CORS(app, supports_credentials=True, resources={r"/*": {"origins": "https://nine-project-recipe-hub.onrender.com"}}) 
 
     return app
 
