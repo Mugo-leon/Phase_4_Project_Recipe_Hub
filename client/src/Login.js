@@ -20,6 +20,7 @@ function Login({ onLogin }) {
         try {
             const response = await fetch('https://phase-4-project-recipe-hub-7123.onrender.com/login', {
                 method: 'POST',
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json'
                 },
