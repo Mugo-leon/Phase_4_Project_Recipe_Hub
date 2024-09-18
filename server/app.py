@@ -34,6 +34,18 @@ def create_app():
 
 app = create_app()
 
+@app.route('/login', methods=['OPTIONS'])
+def login_options():
+    return _build_cors_prelight_response()
+
+def _build_cors_prelight_response():
+    response = make_response()
+    response.headers.add("Access-Control-Allow-Origin", "https://nine-project-recipe-hub.onrender.com")
+    response.headers.add('Access-Control-Allow-Headers', "Content-Type, Authorization")
+    response.headers.add('Access-Control-Allow-Methods', "POST, OPTIONS")
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+    return response
+
 
 @app.route('/get_user_recipes/<username>', methods=['GET'])
 def get_user_recipes(username):
