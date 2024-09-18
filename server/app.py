@@ -2,7 +2,7 @@ from models import db, User, Recipe, FavoriteRecipe
 from flask import Flask, jsonify, request, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_cors import CORS
+
 from flask_session import Session
 
 
@@ -26,25 +26,13 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
     Session(app)
-    CORS(app, resources={r"/*": {"origins": "https://nine-project-recipe-hub.onrender.com"}}, 
-     supports_credentials=True, 
-     allow_headers=["Content-Type", "Authorization"])
+    
 
     return app
 
 app = create_app()
 
-@app.route('/login', methods=['OPTIONS'])
-def login_options():
-    return _build_cors_prelight_response()
 
-def _build_cors_prelight_response():
-    response = make_response()
-    response.headers.add("Access-Control-Allow-Origin", "https://nine-project-recipe-hub.onrender.com")
-    response.headers.add('Access-Control-Allow-Headers', "Content-Type, Authorization")
-    response.headers.add('Access-Control-Allow-Methods', "POST, OPTIONS")
-    response.headers.add('Access-Control-Allow-Credentials', 'true')
-    return response
 
 
 @app.route('/get_user_recipes/<username>', methods=['GET'])
