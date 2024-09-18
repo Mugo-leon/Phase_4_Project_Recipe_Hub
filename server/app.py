@@ -26,7 +26,9 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
     Session(app)
-    CORS(app, resources={r"/*": {"origins": "https://nine-project-recipe-hub.onrender.com"}}, supports_credentials=True)
+    CORS(app, resources={r"/*": {"origins": "https://nine-project-recipe-hub.onrender.com"}}, 
+     supports_credentials=True, 
+     allow_headers=["Content-Type", "Authorization"])
 
     return app
 
